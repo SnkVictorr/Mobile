@@ -2,10 +2,10 @@ export default class Usuario {
   // Uso do underline (_) para diferenciar as palavras reservadas do POO das variáveis comuns
   // Atributos
   private _id: number;
-  private _nome: string;
+  protected _nome: string;
   private _email: string;
   private _senha: string;
-  private _mensagem: string;
+  protected _mensagem?: string;
 
   constructor(
     id: number,
@@ -30,12 +30,12 @@ export default class Usuario {
   }
 
   // Metodo2: exibirNome
-  public exibirNome(): string {
-    return `Nome: ${this._nome}`;
+  public exibirPerfil(): string {
+    return `Perfil: ${this._nome}`;
   }
 
-  // Metodo3: exibirMsgUsuario
-  public exibirMsgUsuario(): string {
+  // Metodo3: exibirMsg
+  public exibirMsg(): string {
     return `Mensagem: ${this._mensagem}`;
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import FormCar from "../components/FormCar";
+import FormUser from "../components/FormUser";
 
 export default class home extends Component {
   render() {
@@ -8,7 +8,8 @@ export default class home extends Component {
       <View style={{ flex: 1, padding: 20 }}>
         {/* <Form /> */}
         {/* <FormLogin /> */}
-        <FormCar />
+        {/* <FormCar /> */}
+        <FormUser></FormUser>
       </View>
     );
   }

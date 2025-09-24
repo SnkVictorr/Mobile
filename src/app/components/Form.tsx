@@ -1,10 +1,10 @@
-import { Text, View } from "react-native";
-import React, { Component, useState } from "react";
-import Title from "./Title";
-import Input from "./Input";
-import Button from "./Button";
 import Calculadora from "@/src/models/Calculadora";
+import React from "react";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Button from "./Button";
+import Input from "./Input";
+import Title from "./Title";
 
 const Form: React.FC = () => {
   // UseState para colocar os valores dos inputs

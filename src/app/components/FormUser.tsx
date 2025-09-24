@@ -1,24 +1,26 @@
-import Usuario from "@/src/models/Usuario";
+import Administrador from "@/src/models/Adminstrador";
 import React from "react";
 import { Text, View } from "react-native";
 import Button from "./Button";
 import Input from "./Input";
 import Title from "./Title";
 
-const FormLogin: React.FC = () => {
+
+const FormUser: React.FC = () => {
   // UseState para colocar os valores dos inputs
   // Interação do usuário com o estado da página (Interatividade)
   // UseState muda conforme o usuário faz ações
   const [email, setEmail] = React.useState<string>("");
   const [senha, setSenha] = React.useState<string>("");
   const [nome, setNome] = React.useState<string>("");
-  const [mensagem, setMensagem] = React.useState<string>("");
-  const [result, setResult] = React.useState<string | null>(null);
+  const [cargo, setCargo] = React.useState<string>("");
 
-  const onPressLogin = () => {
-    const _usuario = new Usuario(1, nome, email, senha, mensagem);
-    // setResult(_usuario.loginUsuario());
-    setResult(_usuario.exibirMsg() + " - " + _usuario.exibirPerfil());
+  const [mensagem, setMensagem] = React.useState<string>("");
+
+  const exibirMensagem = () => {
+    const _adm = new Administrador(1, nome, email, senha, mensagem, cargo);
+
+    setMensagem(_adm.exibirMsg());
   };
   return (
     <View style={{ flex: 1 }}>
@@ -50,18 +52,21 @@ const FormLogin: React.FC = () => {
         value={senha}
         onChangeText={(text) => setSenha(text)}
       />
-
-      <Title TitleName="Digite sua mensagem" />
+      <Title TitleName="Digite seu Cargo" />
       <Input
-        InputName="Digite sua Mensagem"
+        InputName="Digite seu Cargo"
         value={mensagem}
-        onChangeText={(text) => setMensagem(text)}
+        onChangeText={(text) => setCargo(text)}
       />
-      <Button ButtonName="Login" ButtonColor="orange" onPress={onPressLogin} />
+      <Button
+        ButtonName="Aperte"
+        ButtonColor="orange"
+        onPress={exibirMensagem}
+      />
 
-      {result !== null && <Text style={{ fontSize: 18 }}>{result}</Text>}
+      {mensagem !== null && <Text style={{ fontSize: 18 }}>{mensagem}</Text>}
     </View>
   );
 };
 
-export default FormLogin;
+export default FormUser;

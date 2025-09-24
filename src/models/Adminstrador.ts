@@ -1,22 +1,23 @@
 import Usuario from "./Usuario";
 
 class Administrador extends Usuario {
-  private nivelAcesso: string;
+  private _cargo: string;
 
   constructor(
     _id: number,
-    nome: string,
-    email: string,
-    senha: string,
-    mensagem: string,
-    nivelAcesso: string
+    _nome: string,
+    _email: string,
+    _senha: string,
+    _mensagem: string,
+    _cargo: string
   ) {
-    super(_id, nome, email, senha, mensagem);
-    this.nivelAcesso = nivelAcesso;
+    super(_id, _nome, _email, _senha, _mensagem);
+    this._cargo = _cargo;
   }
 
-  public exibirNivelAcesso(): string {
-    return `Nível de Acesso: ${this.nivelAcesso}`;
+  // Polimorfismo: utilizar os mesmos métodos de forma diferente
+  public exibirMsg(): string {
+    return `Seja Bem Vindo: ${this._nome} com ${this._cargo}`;
   }
 }
 
