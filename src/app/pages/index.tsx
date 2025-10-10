@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import FormUser from "../components/FormUser";
+import FormBanco from "../../components/FormBanco";
 
 export default class home extends Component {
   render() {
@@ -9,7 +9,8 @@ export default class home extends Component {
         {/* <Form /> */}
         {/* <FormLogin /> */}
         {/* <FormCar /> */}
-        <FormUser></FormUser>
+        {/* <FormUser></FormUser> */}
+        <FormBanco />
       </View>
     );
   }

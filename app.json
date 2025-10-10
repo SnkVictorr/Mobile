@@ -30,7 +30,19 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-sqlite",
+        {
+          "enableFTS": true, // Ativa o suport a FTS (Full-Text Search)
+          "useSQLCipher": true, // Ativa o uso do SQLCipher para criptografia de banco de dados
+          "android": {
+            "enableFTS": false, // Desativa o suporte a FTS no Android
+
+            "useSQLCipher": false // Desativa o uso do SQLCipher para android
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

@@ -1,5 +1,3 @@
-
-
 export default abstract class Banco {
   private _saque: number;
   private _deposito: number;
@@ -11,5 +9,5 @@ export default abstract class Banco {
     this._saldo = saldo;
   }
 
-  public Pagar() {}
+  public abstract Pagar(): string;
 }
